@@ -1,0 +1,64 @@
+<ion-navbar *navbar class="hide-border">
+    <ion-title >Add tags</ion-title>
+</ion-navbar>
+
+<!-- <ion-item class="customnavbar" >
+    <ion-title class="tagstitle">Add tags</ion-title>
+    <ion-avatar item-left>
+      <button class="addtagbutton" (click)="gonavback()">
+      <ion-icon name="ios-arrow-back" style="font-size: 40px; color: #343434;"></ion-icon>
+    </button>
+    </ion-avatar>
+    
+</ion-item> -->
+
+<ion-content class="tagsview">
+
+    <p class="tagdes">Add tags to this notification so that <br/>
+
+    people can follow it.</p>
+<!--     <div class="list">
+        <ion-checkbox  >
+          Alerts (only if Vital)
+        </ion-checkbox>
+
+        
+        <ion-checkbox >Alerts (only if Vital)</ion-checkbox>
+        
+        
+        <ion-checkbox *ngFor="let tag of tags"  [(ng-model)]="tag.checked" [(ng-checked)]="tag.checked">
+          {{ tag.title }}
+        </ion-checkbox>
+    </div> -->
+    <ion-list class="customlistitem">
+    <ion-item >
+      <ion-label>Alerts (only if vital)</ion-label>
+      <ion-checkbox (change)="change($event, item)"></ion-checkbox>
+    </ion-item>
+    <!-- <ion-item *ngFor="let item of items">
+      <ion-label>Alerts</ion-label>
+      <ion-checkbox (change)="change($event, item)"></ion-checkbox>
+    </ion-item> -->
+    <ion-item *ngFor="let tag of tags">
+      <ion-label>{{tag.name}}</ion-label>
+      <ion-checkbox (ionChange)="changetag($event, tag)" [(ngModel)]="tag.checked"></ion-checkbox>
+      <!-- <ion-avatar item-right>
+        <button class="addtagbutton" (click)="removetag(tag)">
+          <ion-icon name="ios-close" style="font-size: 60px; color: #acacac;"></ion-icon>
+        </button>
+      </ion-avatar> -->
+    </ion-item>
+  </ion-list>
+
+  
+  <div class="custominput">
+    <ion-input type="text" placeholder="Enter tag(E.g. Social, Sport, Food)" class="inputcontent" [value]="addtagvalue" [(ngModel)]="addtagvalue"></ion-input>
+    <button class="addtagbutton" (click)="addtagfunc()">
+      <ion-icon name="ios-add" style="font-size: 60px; color: rgb(57, 162, 240); margin-right: -webkit-calc(22px);"></ion-icon>
+    </button>
+  </div>
+
+ <button (click)="done()">Done</button>
+
+
+</ion-content>

@@ -1,0 +1,30 @@
+<ion-navbar *navbar class="hide-border">
+    <ion-title>Join Communities</ion-title>
+</ion-navbar>
+
+<ion-content>
+
+    <ion-searchbar (keyup)="filterBoards($event)"></ion-searchbar>
+
+    <p [hidden]="loaded">
+        Boards are being loaded..
+    </p>
+
+    <p [hidden]="!failed" danger padding-left>
+        Unable to fetch boards. <a (click)="initializeBoards()">Try again?</a>
+    </p>
+
+
+    <ion-card *ngFor="let board of filtered" (click)="onClickBoard(board)">
+        <ion-card-content class="board-content">
+            <img src="{{board.imagename}}" class="board-image" *ngIf="board.imagename">
+            <h2>{{board.name}}</h2>
+            <p class="board-location">{{board.location_text}}</p>
+            <p>{{board.description}}</p>
+            <img src="img/checked.png" class="board-checked" [hidden]="!board.is_member || dirty.has(board.id)">
+            <!-- <ion-label primary [hidden]="!dirty.has(board.id)">...</ion-label>
+            <ion-label secondary [hidden]="!board.is_member || dirty.has(board.id)">Following</ion-label> -->
+        </ion-card-content>
+    </ion-card>
+
+</ion-content>

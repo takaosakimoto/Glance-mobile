@@ -1,0 +1,27 @@
+<ion-content>
+
+    <div padding text-center>
+
+        <br />
+        <br />
+
+        <div>
+            <img src="img/icon.png" (click)="debug()" />
+        </div>
+
+        <h2>Glance</h2>
+        <p>A simple way of getting vital information direct to those who need it.</p>
+
+        <button (click)="signup()" primary block>Sign up</button>
+
+        <br />
+
+        <p>Already have an account?</p>
+
+        <button (click)="login()" primary block>Log in</button>
+
+        <span style="font-size: 8px">{{debugText}}</span>
+
+    </div>
+
+</ion-content>

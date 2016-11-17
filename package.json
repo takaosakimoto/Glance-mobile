@@ -1,0 +1,81 @@
+{
+  "name": "Glance",
+  "description": "Glance",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.org:immergent/glance-app.git"
+  },
+  "dependencies": {
+    "@angular/common": "2.0.0-rc.1",
+    "@angular/compiler": "2.0.0-rc.1",
+    "@angular/core": "2.0.0-rc.1",
+    "@angular/http": "2.0.0-rc.1",
+    "@angular/platform-browser": "2.0.0-rc.1",
+    "@angular/platform-browser-dynamic": "2.0.0-rc.1",
+    "@angular/router": "2.0.0-rc.1",
+    "@ionic/cloud-angular": "^0.4.0",
+    "es6-shim": "0.35.0",
+    "ionic-angular": "2.0.0-beta.8",
+    "ionic-native": "1.3.0",
+    "ionicons": "3.0.0",
+    "reflect-metadata": "0.1.3",
+    "rxjs": "5.0.0-beta.6",
+    "zone.js": "0.6.12"
+  },
+  "devDependencies": {
+    "del": "2.2.0",
+    "gulp": "3.9.1",
+    "gulp-shell": "^0.5.2",
+    "gulp-tslint": "4.3.4",
+    "gulp-watch": "4.3.5",
+    "ionic-gulp-browserify-typescript": "^1.1.0",
+    "ionic-gulp-fonts-copy": "^1.0.0",
+    "ionic-gulp-html-copy": "^1.0.0",
+    "ionic-gulp-sass-build": "^1.0.0",
+    "ionic-gulp-scripts-copy": "^2.0.0",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.22",
+    "karma-browserify": "^5.0.5",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-coverage": "^1.0.0",
+    "karma-jasmine": "^1.0.2",
+    "karma-mocha-reporter": "^2.0.3",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "phantomjs-prebuilt": "^2.1.7",
+    "run-sequence": "1.1.5",
+    "tslint": "^3.10.1",
+    "tslint-eslint-rules": "^1.3.0"
+  },
+  "commentedDevDeps": {
+    "browserify-istanbul": "^2.0.0",
+    "codecov.io": "^0.1.6",
+    "gulp-typescript": "^2.13.6",
+    "isparta": "^4.0.0",
+    "traceur": "0.0.110",
+    "ts-node": "^0.8.0",
+    "tsify": "^0.16.0"
+  },
+  "cordovaPlugins": [
+    {
+      "variables": {
+        "SENDER_ID": "754071665000"
+      },
+      "locator": "phonegap-plugin-push"
+    }
+  ],
+  "commentedCordovaPlugins": [
+    "cordova-plugin-device",
+    "cordova-plugin-console",
+    "cordova-plugin-splashscreen",
+    "cordova-plugin-statusbar",
+    "ionic-plugin-keyboard"
+  ],
+  "cordovaPlatforms": [
+    "ios",
+    {
+      "platform": "android",
+      "locator": "browser"
+    }
+  ]
+}

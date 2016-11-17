@@ -1,0 +1,99 @@
+<ion-navbar hideBackButton *navbar class="hide-border">
+   <!--  <button menuToggle (click)="navclick()">
+        <ion-icon name="menu"></ion-icon>
+    </button> -->
+    <ion-title class="noticetitle">New Post</ion-title>
+    <ion-buttons end>
+        <button class="" (click)="gonavback()">
+            Cancel
+        </button>
+    </ion-buttons>
+</ion-navbar>
+
+
+<ion-content class="noticeview">
+
+    <ion-list padding>
+
+        <form #noticeForm="ngForm" novalidate>
+
+            <ion-item>
+                <ion-label stacked>Title</ion-label>
+                <ion-input [(ngModel)]="notice.title" ngControl="title" placeholder="Your notice's title" type="text" #title="ngForm" required>
+                </ion-input>
+            </ion-item>
+            <p [hidden]="title.valid || submitted == false" danger padding-left>
+                A title is required
+            </p>
+            <ion-item>
+                <ion-label stacked>Description</ion-label>
+                <ion-textarea [(ngModel)]="notice.description" ngControl="description" placeholder="Your notice's Description" #description="ngForm">
+                </ion-textarea>
+            </ion-item>
+
+            <div class="tagsdiv" (click)="onCreateTags()">
+                <div [hidden]="!visisblebasetag()" class="basetag">Tap to add tags</div>
+                <div *ngFor="let noticetag of noticetags" class="tagfield">{{noticetag}}</div>
+            </div>
+            <!--  Url Input  -->
+            <ion-item>
+                <ion-label stacked>Add link (optional)</ion-label>
+                <ion-input [(ngModel)]="notice.url" ngControl="url" placeholder="" type="text" #url="ngForm">
+                </ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label stacked>Location</ion-label>
+                <ion-input [(ngModel)]="notice.location_text" ngControl="location_text" placeholder="Your notice's location" type="text" #location_text="ngForm">
+                </ion-input>
+            </ion-item>
+             <ion-item>
+                <ion-label>Set a time</ion-label>
+                <ion-toggle color="energized" (ionChange)="changestate()"></ion-toggle>
+            </ion-item>
+            <ion-item [hidden]="stateflag">
+                <ion-label>Starts At(optional)</ion-label>
+                <ion-datetime [(ngModel)]="localstartdate" (ionChange)="onDateselect1()" max="2030" min="1990" displayFormat="MM/DD/YYYY HH:mm" pickerFormat="MMMM-DD-YYYY HH:mm" >
+                </ion-datetime>
+            </ion-item>
+
+            <ion-item [hidden]="stateflag">
+                <ion-label>Finishes At(optional)</ion-label>
+                <ion-datetime [(ngModel)]="localfinishdate" (ionChange)="onDateselect2()" max="2030" min="1990" displayFormat="MM/DD/YYYY HH:mm" pickerFormat="MMMM-DD-YYYY HH:mm" >
+                </ion-datetime>
+            </ion-item>
+
+           <!--  <button (click)="onremoveTags()">Create tags</button> -->
+
+
+
+            <!--ion-item>
+                <ion-label stacked>Starts At</ion-label>
+                <ion-input [(ngModel)]="notice.occurs_at" ngControl="occurs_at" placeholder="mm/dd/yy hh:mm (Optional)" type="text" #occurs_at="ngForm">
+                </ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label stacked>Finishes At</ion-label>
+                <ion-input [(ngModel)]="notice.finishes_at" ngControl="finishes_at" placeholder="mm/dd/yy hh:mm (Optional)" type="text" #finishes_at="ngForm">
+                </ion-input>
+            </ion-item-->
+
+            <p [hidden]="!saved" secondary padding-left>
+                Notice posted
+            </p>
+
+
+            <p [hidden]="!error" danger padding-left>
+                An unknown error occurred. Please try again later
+            </p>
+
+            <div padding>
+                <button [disabled]="saved" (click)="onSave(noticeForm)" type="submit" primary block>Post</button>
+            </div>
+
+
+        </form>
+    </ion-list>
+
+</ion-content>

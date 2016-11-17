@@ -1,0 +1,28 @@
+<ion-navbar *navbar class="hide-border">
+    <!-- <button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button> -->
+    <ion-title>Manage Users</ion-title>
+</ion-navbar>
+
+<ion-content>
+
+    <ion-searchbar (keyup)="filterUsers($event)"></ion-searchbar>
+
+    <p [hidden]="loaded">
+        User list is being loaded..
+    </p>
+
+    <p [hidden]="!failed" danger padding-left>
+        Unable to fetch users. <a (click)="initializeUsers()">Try again?</a>
+    </p>
+
+    <ion-list>
+
+        <ion-item *ngFor="let user of filtered">
+            <ion-label>{{user.fullname}} ({{user.email}})</ion-label>
+            <ion-checkbox dark [(ngModel)]="user.is_manager" [disabled]="dirty.has(user.id)" (click)="updateIsManager(user)"></ion-checkbox>
+        </ion-item>
+    </ion-list>
+
+</ion-content>

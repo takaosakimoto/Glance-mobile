@@ -1,0 +1,361 @@
+
+.toolbar-title{
+	text-align:center; padding: 10px; background: #005292; margin: -4px;
+}
+
+.toolbar-content h5 {text-align: center;padding: 10px;background: #337AB7;margin: -4px;}
+ion-col.circleimage{ text-align:center;}
+ion-col .boardimage{ width: 150px; height: 150px; max-width:17vw; max-height:17vw; border-radius: 51%; border:2px solid #fff;}
+ion-card{ border-radius: 4px;}
+.item h2{ font-weight: bold;}
+.item{ background: #fff; color:#343434;}
+ion-content{ background: #efeff4;}
+ion-backdrop{ opacity: 0.6;}
+//#mainMenu .item{ color: black;}
+//ion-input, ion-textarea{ color:#343434; }
+
+
+
+
+.postfilterclass{
+	margin: -4px !important;
+	background: #337AB7;
+	width: 100vw;
+	color: white;
+	margin-bottom: -5px !important;
+}
+.postfilterclass ion-label{
+	text-align: center;
+}
+
+.tab-button{
+	color: white;
+	opacity: 1 !important;
+}
+
+.tab-button[aria-selected="true"] {
+    background: white;
+}
+tab-highlight{
+	background: white;
+}
+
+ion-content-section{
+	height: 80% !important;
+}
+
+
+
+ion-content span{ margin-right: 1vw;}
+.picker-wrapper {
+	background-color: white;
+}
+.picker-toolbar{
+	background-color: white;
+}
+
+.outer-content{
+	background-color: #122448;
+
+}
+
+.picker-below-highlight, .picker-above-highlight{
+	background: transparent;
+}
+.alert-title, .alert-message{ color : black; text-align: center;}
+.datetime-text {overflow: visible;}
+.notice_padding{padding-left:10px; padding-right:10px;}
+
+.scrollboard{height : 100%;}
+
+.custom-file-input {
+		display: inline-block;
+		position: relative;
+		color: #533e00;
+	}
+.custom-file-input input {
+		visibility: hidden;
+		width: 100px;
+	}
+
+.custom-file-input:before {
+		content: 'Choose Image';
+		display: block;
+		background: -webkit-linear-gradient( -180deg, #ffdc73, #febf01);
+		background: -o-linear-gradient( -180deg, #ffdc73, #febf01);
+		background: -moz-linear-gradient( -180deg, #ffdc73, #febf01);
+		background: linear-gradient( -180deg, #ffdc73, #febf01);
+		border: 3px solid #dca602;
+		border-radius: 10px;
+		padding: 5px 0px;
+		outline: none;
+		white-space: nowrap;
+		cursor: pointer;
+		text-shadow: 1px 1px rgba(255,255,255,0.7);
+		font-weight: bold;
+		text-align: center;
+		font-size: 10pt;
+		position: absolute;
+		left: 0;
+		right: 0;
+	}
+
+
+.custom-file-input:hover:before {
+		border-color: #febf01;
+	}
+		.custom-file-input:active:before {
+		background: #febf01;
+	}
+
+.popover-content{
+	border-radius: 10px;
+	width:300px;
+	left:39px;
+}
+.popover-content ion-label{
+	margin:0px; padding:20px;
+}
+.popover-content .item{ padding:0px; }
+.popover-content .item-inner{ padding:0px; }
+.tag-container{
+	display:flex; display: -webkit-flex; flex-wrap:wrap;
+	-webkit-flex-wrap: wrap; justify-content: center; 
+	-webkit-justify-content: center;
+}
+
+.noticetitle{
+	color: black; font-size: 1.2em !important; padding:10px 0;
+}
+
+.tagnotice{
+	background: #005292; line-height: 24px; color: white; 
+	border-radius: 100px; margin: 5px 2px 0px 2px; font-size: 0.8em;
+	padding:0 10px;
+}
+.notice-image-container{padding: 20px 0px 6px 0px;}
+.notice-time{ margin-top: 20px;}
+
+.noticebar.item-button{
+	position:absolute;
+	top: 5px;
+	right: 5px;
+}
+.notice_padding{color:black}
+//.noticetitle{color:black; font-size: 40px !important;}
+.socialbutton, .sportbutton{width:40%;}
+.calendarbutton{width: 60%; font-size: 17px; margin-bottom:25px;}
+
+
+.scrollboard{height: 173px;  max-height:19vw; }
+
+//tagsview css
+.tagsbar .toolbar-background { background:#edeff0; border-bottom: 1.5px solid #DEDEDE;}
+.tagsbar .bar-button-default {color: #343434;}
+.tagsbar .bar-button-default:hover {color: #343434;}
+.tagstitle .toolbar-title { text-align:center; margin-left: -22px; color: #343434; }
+
+.tagsview{
+//	background: #edeff0;
+	text-align:center;
+//	color: #343434;
+}
+.tagsview .tagdes{
+  color: #343434; font-size: 20px; margin-top:40px; margin-bottom:40px;
+}
+ 
+.customlistitem .item{
+	color: black;  border-bottom: 1px solid #DEDEDE; font-size: 2rem; font-weight: bold;
+}
+
+.customlistitem .checkbox-icon{
+	width: 25px; height:25px; border-radius : 5px; background-color: white;
+}
+.customlistitem .checkbox-checked{
+	background-color: #008cf0;
+}
+.customlistitem .checkbox-checked .checkbox-inner{
+	top: 3px; left: 6px; width: 8px; height: 12px;
+}
+
+.customlistitem .item-inner{
+	border-bottom: 0px solid transparent;
+}
+.customlistitem .item:first-child{
+	border-top: 0px solid transparent; color: #343434 !important;
+}
+
+
+.inputcontent{ background: white; border-radius:7px; }
+.addtagbutton{
+	height: 40px; width: 40px; background: transparent; box-shadow: 0px 0px 0px; color:transparent;
+}
+.addtagbutton:hover:not(.disable-hover){background: transparent;}
+.addtagbutton:click{background: transparent; box-shadow: 0px 0px 0px;}
+
+//custom nav bar
+.customnavbar{
+	height: 56px; 
+	background: #005292; 
+	border-bottom: 1.5px solid grey;
+}
+.customnavbar .item-inner{ border-bottom: 0px solid transparent;}
+
+//.noticetitle .toolbar-title { text-align:center; margin-left: -22px; color: #343434; }
+
+.custominput{ width: 100%; margin-bottom: 20px; color: #343434;}
+.custominput input{ width: calc(100% - 90px); width: -webkit-calc(100% - 90px); height:50px; margin-top:0px; margin-bottom:0px; background:white; font-size:2rem; margin-left:20px;
+  border-radius: 10px; float: left;}
+.custominput .addtagbutton{float: right; margin-right: 19px;}
+
+//.noticeview{
+//	background: #edeff0;
+//	text-align:center;
+//	color: #343434;
+//}
+//.noticeview ion-label{ color: #343434;}
+
+//.noticeview .item{
+//	background:#EDEFF0; 
+//	color:#343434;
+//}
+//.noticeview ion-input, .noticeview ion-textarea{ border-radius: 7px;background: white;}
+
+
+
+.tagsdiv{ width: calc(100% - 16px); width: -webkit-calc(100% - 16px); margin-bottom:16px; background: white; display : inline-block; margin-top:20px; min-height: 37px; border: 1.5px solid grey; border-radius: 5px;}
+.tagfield{ width: 70px; float: left; display: inline-block; text-align: center;   
+   background: #0071E1; margin: 5px; line-height: 25px; color: white; border-radius: 3px;
+ }
+
+ .basetag{ line-height: 25px; margin: 5px; color: grey; width: 100%; text-align: left;}
+
+ 
+
+ ion-card + ion-card { margin-top: 10px;}
+
+
+.customcontent{
+	width:100%;
+}
+
+ .anotherview{
+ 	color: black;
+ 	text-align: center;
+ 	
+ }
+
+ .anotherview .row11{
+ 	margin-top: 8vh;
+ 	font-size: 5vw;
+ 	letter-spacing: 0.5vw;
+	word-spacing: 0.5vw;
+ }
+ .anotherview .row22{
+ 	margin-top: 9vh;
+ 	font-size: 4vw;
+ 	letter-spacing: 0.5vw;
+	word-spacing: 0.5vw;
+ }
+
+ .anotherview .row33{
+ 	margin-top: 11vh;
+ 	font-size: 4vw;
+ }
+ .buttongroup{
+ 	margin-top: 6vh;
+ 	width: 50%;
+ 	margin-left: 25%;
+ 
+ }
+
+ .buttongroup button{
+  font-size: 4vw;
+  margin-top:2.5vh;
+  
+ }
+.button{
+	text-transform: none;
+}
+
+#logoutbutton{
+	width: 90% !important;
+	background-color: #b22211 !important;
+}
+
+
+.toggle-inner{
+	background-color: white !important;
+}
+
+.toggle-checked {
+    background-color: green;
+}
+
+
+
+// community board
+.board-content{
+	text-align: center; position: relative;
+}
+.board-content h2 {
+	font-size: 1.8rem; color: white;
+}
+.board-content p {
+	font-size: 1.3rem; color: white;
+}
+.board-content .board-location {
+	margin-bottom: 1rem;
+}
+
+.board-image{
+	height: 80px; width: 80px; border-radius: 50px; display: inline-block;
+}
+.board-checked{
+	width: 25px; position: absolute; top: 20px; right: 20px;
+}
+
+@media screen and (min-width: 700px) {
+	.customcontent{
+		width:700px;
+		text-align: center;
+		margin-left: calc(50vw - 350px);
+	}
+
+ .anotherview{
+ 	color: black;
+ 	text-align: center;
+ 	
+ }
+
+ .anotherview .row11{
+ 	margin-top: 8vh;
+ 	font-size: 50px;
+ 	letter-spacing: 5px;
+	word-spacing: 5px;
+ }
+ .anotherview .row22{
+ 	margin-top: 9vh;
+ 	font-size: 40px;
+ 	letter-spacing: 4px;
+	word-spacing: 5px;
+ }
+
+ .anotherview .row33{
+ 	margin-top: 11vh;
+ 	font-size: 40px;
+ }
+ .buttongroup{
+ 	margin-top: 6vh;
+ 	width: 350px;
+ 	
+ 
+ }
+
+ .buttongroup button{
+  font-size: 25px;
+  height: 50px;
+
+  
+ }
+}

@@ -1,0 +1,64 @@
+<ion-content style="background-color: white; color:black; padding-bottom: 25px;">
+    <div text-center>
+        <ion-item style="text-align:center;">
+          <div class="notice-image-container">
+              <!-- <img src="img/myboard.png" style="width:40%"> -->
+              <img src="{{noticeimage}}" [hidden]="!isimagevisible(noticeimage)" style="width:108px; height: 108px; border-radius: 55px; ">
+             <img src="img/myboard.png" [hidden]="isimagevisible(noticeimage)" style="width:108px; height: 108px; border-radius: 55px;">
+          </div>
+            
+            <button (click)="onClose()" clear item-right class="noticebar">
+                <ion-icon name="close"></ion-icon>
+            </button>
+          <div style="width:100%;">
+              <h2 class="noticetitle">{{notice.title}}</h2>
+          </div>
+          <div class="tag-container">
+            <!-- <button class="socialbutton">SOCIAL</button>
+            <button class="sportbutton">SPORT</button> -->
+            <div class="tagnotice" *ngFor="let tag of tags">{{tag}}</div>
+          </div>
+          <div class="notice-time">
+            <!-- <p class="notice_padding" *ngFor="let tag of tags" secondary item-left>{{tag}}</p> -->
+
+            <p class="notice_padding">{{localdate}}</p>
+          </div>
+        </ion-item>
+        <div style="width:100%;">
+        <p class="notice_padding">{{notice.description}}</p>
+        </div>
+        <div style="width:100%;">
+        <a class="notice_padding" href="{{realurl}}">{{notice.url}}</a>
+        </div>
+        <!-- <button class="calendarbutton">Add Calendar</button> -->
+    </div>
+</ion-content>
+
+
+<!-- <ion-content style="background-color: white; color:black;">
+    <div text-center>
+        <ion-item style="text-align:center;" class="noticebar">
+          <div style="width:100%;">
+              <img src="img/myboard.png" style="width:50%">
+          </div>
+            
+            <button (click)="onClose()" clear item-right>
+                <ion-icon name="close"></ion-icon>
+            </button>
+          <div style="width:100%;">
+              
+          </div>
+        </ion-item>
+
+        <h2 class="notice_padding">{{notice.title}}</h2>
+        <p class="notice_padding">{{notice.description}}</p>
+        <a class="notice_padding" href="{{notice.url}}">{{notice.url}}</a>
+
+        <p class="notice_padding">{{notice.location_text}}</p>
+
+        <p class="notice_padding" *ngFor="let tag of tags" secondary item-left>{{tag}}</p>
+
+        <p class="notice_padding">{{notice.occurs_at}}</p>
+    </div>
+</ion-content>
+ -->

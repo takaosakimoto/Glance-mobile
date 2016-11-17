@@ -1,0 +1,72 @@
+<ion-navbar *navbar class="hide-border">
+    <ion-title>Board</ion-title>
+</ion-navbar>
+
+<ion-content>
+
+
+    <ion-list padding>
+
+        <form #boardForm="ngForm" novalidate>
+
+            <ion-item>
+                <ion-label stacked>Board name</ion-label>
+                <ion-input [(ngModel)]="board.name" ngControl="name" placeholder="Your board's name" type="text" #name="ngForm" required>
+                </ion-input>
+            </ion-item>
+            <p [hidden]="name.valid || submitted == false" danger padding-left>
+                A name is required
+            </p>
+
+            <ion-item>
+                <ion-label stacked>Location</ion-label>
+                <ion-input [(ngModel)]="board.location_text" ngControl="location_text" placeholder="Your board's location" type="text" #location_text="ngForm" required>
+                </ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label stacked>Invite Code</ion-label>
+                <ion-input [(ngModel)]="board.invite_code" ngControl="invite_code" placeholder="Auto-generated private invite code" type="text" #invite_code="ngForm" disabled>
+                </ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label stacked>Description</ion-label>
+                <ion-textarea [(ngModel)]="board.description" ngControl="description" placeholder="A bit about your board" type="text" #description="ngForm" required>
+                </ion-textarea>
+            </ion-item>
+           
+           <!-- Preview Image -->
+           <!-- *ngFor="#file_src of file_srcs" -->
+            <div >
+                <img src="{{file_srcs}}" alt="" style="max-width:100px;margin-top:30px; width:100px; height: 100px; " />
+            </div>
+            <!-- Image select -->
+             <label class="custom-file-input" *ngIf="!devicestate">
+                <input type="file" id="previewlogo" (change)="fileChange(input)" #input>
+            </label>
+             <!-- <label *ngIf="devicestate"  class="custom-file-input">
+                <input type="file" id="previewlogo" (change)="fileChange(input)" #input>
+            </label> -->
+            <!-- image picker -->
+            <button (click)="imagePicker()" *ngIf="devicestate"><ion-icon name= "ios-image"></ion-icon></button>
+            <!-- camera -->
+            <button (click)="takePicture()" *ngIf="devicestate"><ion-icon name= "camera"></ion-icon></button> 
+            <p [hidden]="!saved" secondary padding-left>
+                Changes saved
+            </p>
+
+
+            <p [hidden]="!error" danger padding-left>
+                An unknown error occurred. Please try again later
+            </p>
+
+            <div padding>
+                <button (click)="onSave(boardForm)" type="submit" primary block>Save</button>
+            </div>
+
+
+        </form>
+    </ion-list>
+
+</ion-content>

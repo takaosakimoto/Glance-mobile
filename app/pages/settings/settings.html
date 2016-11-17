@@ -1,0 +1,83 @@
+<ion-navbar *navbar class="hide-border">
+    <!-- <button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button> -->
+    <ion-title>Profile</ion-title>
+</ion-navbar>
+
+
+<ion-content>
+
+    <ion-list padding>
+
+        <form novalidate>
+            <ion-item>
+                <ion-label stacked>Email</ion-label>
+                <ion-input disabled=true type="email" placeholder="Your current email"></ion-input>
+            </ion-item>
+
+            <div padding>
+                <button disabled="true" type="submit" primary block>Update username</button>
+            </div>
+        </form>
+
+        <form #passwordForm="ngForm" novalidate>
+            <ion-item>
+                <ion-label stacked>Current Password</ion-label>
+                <ion-input ngControl="current_password" type="password" placeholder="Your current password" #current_password="ngForm" pattern=".{5,}" required>
+                </ion-input>
+            </ion-item>
+            <p [hidden]="current_password.valid || passwordSubmitted == false" danger padding-left>
+                We need your old password to make sure this is genuine
+            </p>
+
+            <ion-item>
+                <ion-label stacked>New Password</ion-label>
+                <ion-input ngControl="new_password" type="password" placeholder="At least 5 characers" #new_password="ngForm" pattern=".{5,}" required>
+                </ion-input>
+            </ion-item>
+            <p [hidden]="new_password.valid || passwordSubmitted == false" danger padding-left>
+                Your new password must be at least 5 characters
+            </p>
+
+            <p [hidden]="!passwordErrors.unreachable" danger padding-left>
+                Unable to update your password. Check your internet connection or try again later
+            </p>
+            <p [hidden]="!passwordErrors.unknown" danger padding-left>
+                An unknown error occurred. Try again later
+            </p>
+
+            <div padding>
+                <button (click)="onUpdatePassword(passwordForm)" type="submit" primary block>Update password</button>
+            </div>
+        </form>
+
+
+        <form #profileForm="ngForm" novalidate>
+
+            <ion-item>
+                <ion-label stacked>Name</ion-label>
+                <ion-input ngControl="fullname" placeholder="Your name" type="text" #fullname="ngForm" required>
+                </ion-input>
+            </ion-item>
+            <p [hidden]="fullname.valid || profileSubmitted == false" danger padding-left>
+                Your name is required
+            </p>
+
+            <p [hidden]="!profileErrors.unreachable" danger padding-left>
+                Unable to update your profile. Check your internet connection or try again later
+            </p>
+            <p [hidden]="!profileErrors.unknown" danger padding-left>
+                An unknown error occurred. Try again later
+            </p>
+
+            <div padding>
+                <button (click)="onUpdateProfile(profileForm)" type="submit" primary block>Update profile</button>
+            </div>
+        </form>
+
+        <center><button id="logoutbutton" (click)="logout()">Log Out</button></center>
+        
+    </ion-list>
+
+</ion-content>

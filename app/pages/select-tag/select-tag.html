@@ -1,0 +1,51 @@
+<!-- <ion-navbar *navbar class="hide-border">
+    <button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title >select tags</ion-title>
+</ion-navbar> -->
+
+<!-- <ion-item class="customnavbar" >
+    <ion-title class="tagstitle">Add tags</ion-title>
+    <ion-avatar item-left>
+      <button class="addtagbutton" (click)="gonavback()">
+      <ion-icon name="ios-arrow-back" style="font-size: 40px; color: #343434;"></ion-icon>
+    </button>
+    </ion-avatar>
+    
+</ion-item> -->
+
+<ion-content class="tagsview">
+
+    <p class="tagdes">Choose the type of notifications you'd like<br/>
+
+    to receive from this board</p>
+
+    <ion-list class="customlistitem">
+    <ion-item >
+      <ion-label>Alerts (required)</ion-label>
+      
+    </ion-item>
+
+    <ion-item >
+      <ion-label>All notifications</ion-label>
+      <ion-checkbox item-right (ionChange)="allchange($event)" [(ngModel)]="alltags"></ion-checkbox>
+    </ion-item>
+    <!-- <ion-item *ngFor="let item of items">
+      <ion-label>Alerts</ion-label>
+      <ion-checkbox (change)="change($event, item)"></ion-checkbox>
+    </ion-item> -->
+    <ion-item *ngFor="let tag of tags">
+      <ion-label>{{tag.name}}</ion-label>
+      <ion-checkbox item-right (ionChange)="changetag($event, tag)" [(ngModel)]="tag.checked"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+
+  <button style="width:40%" (click)="joinfunc()">Join</button>
+
+  
+
+  <!-- <button (click)="deletetagfunc"> delete</button> -->
+
+
+</ion-content>

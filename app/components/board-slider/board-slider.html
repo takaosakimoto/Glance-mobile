@@ -1,0 +1,40 @@
+<ion-grid >
+	<ion-row  [ngStyle]="{display:displayddl}">
+		<!-- <ion-col width-25 (click)="onClickAll()">
+		    <img src="img/icon.png" id="logoimage">
+		</ion-col>
+		<ion-col width-75>  -->
+		<ion-col>
+			<ion-scroll scrollX="true" class="scrollboard">
+			<ion-row>
+				<ion-col width-25 (click)="onClick(board)" *ngFor="let board of boards" [hidden]="!board.is_member" class="circleimage">
+		   			 <img src="{{board.imagename}}" [hidden]="!isimagevisible(board)" class="boardimage">
+		   			 <img src="img/myboard.png" [hidden]="isimagevisible(board)" class="boardimage">
+				</ion-col>
+			</ion-row>
+			</ion-scroll>
+		</ion-col>
+	</ion-row>
+</ion-grid>
+<!-- <h5 no-margin padding-left>{{selected}}</h5> -->
+
+<ion-item class="postfilterclass" (click)="onClickposts()">
+      <ion-label>{{selected}}</ion-label>
+      <ion-icon name="ios-arrow-down" item-right *ngIf="filterflag"></ion-icon>
+      <ion-icon name="ios-arrow-up" item-right *ngIf="!filterflag"></ion-icon>
+ </ion-item>
+
+
+
+<!-- <ion-grid>
+	<ion-row>
+		<ion-col width-25 (click)="onClickAll()">
+		    <img src="img/icon.png">
+		</ion-col>
+		<ion-col width-25 (click)="onClick(board)" *ngFor="let board of boards" [hidden]="!board.is_member">
+		    <img src="img/myboard.png">
+		</ion-col>
+	</ion-row>
+</ion-grid>
+<h5 no-margin padding-left>{{selected}}</h5> -->
+

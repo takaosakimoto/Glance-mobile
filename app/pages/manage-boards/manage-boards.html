@@ -1,0 +1,22 @@
+<ion-navbar *navbar class="hide-border" hideBackButton hide-tabs>
+    <ion-buttons start left>
+        <button (click)="gototabbar()" style="margin-left: 10px;">
+            <ion-icon name="md-arrow-back"></ion-icon>
+            <!-- <ion-icon class="back-button-icon ion-md-arrow-back" role="img" aria-label="arrow back"></ion-icon> -->
+        </button>
+    </ion-buttons>
+    <ion-title>Settings</ion-title>
+</ion-navbar>
+
+<ion-content padding>
+	<!-- <button [disabled]="myBoard" (click)="onCreateBoard()" primary block>Create board</button>
+	<button [disabled]="!myBoard" (click)="onEditBoard()" primary block>Edit board</button>
+	
+	<button [disabled]="!myBoard" (click)="onManageNotice()" primary block>Remove posts</button>
+	<button [disabled]="!myBoard" (click)="onmanageuser()" primary block>Manage users</button> -->
+	<button *ngIf="!myBoard" (click)="onCreateBoard()" primary block>Create board</button>
+	<button *ngIf="myBoard" (click)="onEditBoard()" primary block>Edit board</button>
+	<button *ngIf="myBoard" (click)="onManageNotice()" primary block>Remove posts</button>
+	<button *ngIf="myBoard" (click)="onmanageuser()" primary block>Manage users</button>
+</ion-content>
+

@@ -1,0 +1,62 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Shared Imports
+// --------------------------------------------------
+// These are the imports which make up the design of this app.
+// By default each design mode includes these shared imports.
+// App Shared Sass variables belong in app.variables.scss.
+
+//@import "../noauth/login";
+//@import "../pages/page2/page2";
+
+//body > ion-app > ion-nav > ion-page > ion-content {
+//  background-image: url('/img/splash.png');
+//}
+
+ion-input {
+  //background-color: white;
+  border-radius: 4px;
+}
+
+ion-textarea {
+  //background-color: white;
+  border-radius: 4px;
+}
+
+ion-card p {
+  color: #edf2f4;
+  
+}
+
+ion-card h2 {
+  //color: #edf2f4;
+  color: #005292;
+}
+
+ion-card h5 {
+  color: #edf2f4;
+}
+
+
+h2 {
+  color: #edf2f4;
+}
+
+h5 {
+  color: #edf2f4;
+}
+
+.item-label-stacked .text-input, .item-label-floating .text-input {
+  margin-left: 4px;
+}
+
+ion-label[stacked] {
+  margin-bottom: 4px;
+}
+
+scroll-content {
+  // The scrollbar should only be visible if it's needed
+  overflow-y: auto;
+}
+

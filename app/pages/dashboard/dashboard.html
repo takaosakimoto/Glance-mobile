@@ -1,0 +1,57 @@
+<ion-navbar *navbar class="hide-border" style="-webkit-flex:inherit; flex:inherit;">
+
+    <ion-buttons start left>
+        <button (click)="onClickchart()">
+            <ion-icon name="ios-chatbubbles-outline"></ion-icon>
+        </button>
+        <button>
+            <ion-icon></ion-icon>
+        </button>
+    </ion-buttons>
+
+    <ion-title>Glance</ion-title>
+
+    <ion-buttons end right [hidden]="!ismanager">
+        <button (click)="onClicksettings()">
+            <ion-icon name="ios-settings-outline"></ion-icon>
+        </button>
+        <button (click)="onAddnotice()">
+            <ion-icon name="ios-create-outline"></ion-icon>
+        </button>
+    </ion-buttons>
+
+</ion-navbar>
+
+<ion-toolbar style="-webkit-flex:none !important; flex:none !important;">
+    <board-slider (select)="onSelectBoard($event)" [(boards)]="dashboard.boards" [(boardimages)]= "dashboard.boardimages"></board-slider>
+</ion-toolbar>
+
+<ion-content>
+
+    <ion-card *ngFor="let notice of mynoticesnew" (click)="onClickNotice(notice)" [hidden]="!isNoticeVisible(notice)">
+        <ion-item>
+            <h2>{{boardsById[notice.board_id].name}}</h2>
+        </ion-item>
+        <ion-item>
+            <p>{{notice.title}}</p>
+        </ion-item>
+        <ion-item>
+            <span *ngFor="let noticetag of dashboard.tags[notice.id]">{{noticetag}}</span>
+            <p item-right>{{stringDate}}</p>
+        </ion-item>
+    </ion-card>
+    <ion-card *ngFor="let notice of mynoticesold" (click)="onClickNotice(notice)" [hidden]="!isNoticeVisible(notice)">
+        <ion-item>
+            <h2>{{boardsById[notice.board_id].name}}</h2>
+        </ion-item>
+        <ion-item>
+            <p>{{notice.title}}</p>
+        </ion-item>
+        <ion-item>
+            <span *ngFor="let noticetag of dashboard.tags[notice.id]">{{noticetag}}</span>
+            <p item-right>{{stringDate}}</p>
+        </ion-item>
+    </ion-card>
+
+</ion-content>
+

@@ -1,0 +1,52 @@
+<ion-navbar *navbar class="hide-border">
+    <ion-title>Login</ion-title>
+</ion-navbar>
+
+<ion-content>
+
+    <div padding text-center>
+            <img src="img/icon.png" />
+    </div>
+
+    <ion-list padding>
+
+        <form #signupForm="ngForm" novalidate>
+            <ion-item>
+                <ion-label stacked>Username</ion-label>
+                <ion-input [(ngModel)]="signup.username" ngControl="username" placeholder="Your email address" type="email" #username="ngForm" required>
+                </ion-input>
+            </ion-item>
+            <p [hidden]="username.valid || submitted == false" danger padding-left>
+                Username is required
+            </p>
+            <p [hidden]="!serverErrors.invalidEmail || submitted == false" danger padding-left>
+                Username must be an email
+            </p>
+
+            <ion-item>
+                <ion-label stacked>Password</ion-label>
+                <ion-input [(ngModel)]="signup.password" ngControl="password" type="password" placeholder="At least 5 characters" #password="ngForm" pattern=".{5,}" required>
+                </ion-input>
+            </ion-item>
+            <p [hidden]="password.valid || submitted == false" danger padding-left>
+                Password must be at least 5 characters
+            </p>
+
+            <p [hidden]="!serverErrors.unreachable" danger padding-left>
+                Unable to log in. Check your internet connection or try again later
+            </p>
+            <p [hidden]="!serverErrors.unrecognized" danger padding-left>
+                We don't recognize those details. Would you like to <a (click)="onForgottenPassword()">reset your password?</a>
+            </p>
+            <p [hidden]="!serverErrors.unknown" danger padding-left>
+                An unknown error occurred. Try again later
+            </p>
+
+            <div padding>
+                <button (click)="onLogin(signupForm)" type="submit" primary block>Log in</button>
+                <button (click)="onForgottenPassword()" type="submit" clear block>Forgotten password</button>
+            </div>
+        </form>
+    </ion-list>
+
+</ion-content>

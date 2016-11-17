@@ -1,0 +1,29 @@
+<ion-navbar *navbar class="hide-border">
+   <!--  <button menuToggle (click)="navclick()">
+        <ion-icon name="menu"></ion-icon>
+    </button> -->
+    <ion-title class="noticetitle">Manage posts</ion-title>
+    <ion-buttons end>
+        <button class="" (click)="gonavback()">
+            Cancel
+        </button>
+    </ion-buttons>
+    
+</ion-navbar>
+
+
+<ion-content class="noticeview">
+
+    <ion-list>
+
+        <ion-item-sliding *ngFor="let mynotice of mynotices" [hidden]="!isNoticeVisible(mynotice)">
+            <ion-item>
+                {{mynotice.title}}
+            </ion-item>
+            <ion-item-options>
+                <button danger (click)="removenotice(mynotice)"><ion-icon name="remove-circle"></ion-icon>Remove</button>
+            </ion-item-options>
+        </ion-item-sliding>
+    </ion-list>
+
+</ion-content>

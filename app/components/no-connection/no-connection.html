@@ -1,0 +1,12 @@
+<ion-content>
+
+    <div text-center>
+        <h2>Connection Problem</h2>
+
+        <p>Unable to communicate with Glance servers.</p>
+
+        <button (click)="onLogout()">Log out</button>
+        <button [disabled]="retrying" (click)="onRetry()">Retry</button>
+    </div>
+
+</ion-content>
